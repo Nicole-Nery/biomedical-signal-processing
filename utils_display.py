@@ -19,7 +19,7 @@ def display_signal_and_features(df):
         col1, col2 = st.columns([2,3])
 
         with col1:
-            with st.container(border=True, height=310):
+            with st.container(border=True, height=320):
                 fig = go.Figure()
                 fig.add_trace(go.Scatter(
                     x=df['t'], 
@@ -37,7 +37,7 @@ def display_signal_and_features(df):
                 st.plotly_chart(fig, use_container_width=True)
 
         with col2:
-            with st.container(border=True, height=310):
+            with st.container(border=True, height=320):
 
                 fig, axes = plt.subplots(1, 2, figsize=(6, 3))
 
