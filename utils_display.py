@@ -66,7 +66,7 @@ def display_signal_and_features(df):
 
             for idx, feature in enumerate(features_to_plot):
                 with st.container(border=False):
-                    col1, col2 = st.columns([11,10])
+                    col1, col2 = st.columns([1,1])
                     with col1:
                         fig = go.Figure()
                         fig.add_trace(go.Scatter(
