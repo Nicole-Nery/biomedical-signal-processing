@@ -16,7 +16,7 @@ def display_signal_and_features(df):
         st.dataframe(df_features, height=220, hide_index=True)
 
     with st.container():
-        col1, col2 = st.columns([2,3])
+        col1, col2 = st.columns([3,4])
 
         with col1:
             with st.container(border=True, height=320):
@@ -66,7 +66,7 @@ def display_signal_and_features(df):
 
             for idx, feature in enumerate(features_to_plot):
                 with st.container(border=True):
-                    col1, col2 = st.columns([2,3])
+                    col1, col2 = st.columns([3,4])
                     with col1:
                         fig = go.Figure()
                         fig.add_trace(go.Scatter(
