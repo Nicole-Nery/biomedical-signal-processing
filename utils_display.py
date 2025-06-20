@@ -86,7 +86,7 @@ def display_signal_and_features(df):
                         st.plotly_chart(fig, use_container_width=True)
 
                     with col2:
-                        fig, axes = plt.subplots(1, 2, figsize=(5, 2.5))
+                        fig, axes = plt.subplots(1, 2, figsize=(6, 3))
                         
                         df = pd.DataFrame({'signal': df_features[feature].values})
 
