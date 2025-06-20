@@ -26,7 +26,7 @@ def display_signal_and_features(df):
                     y=df['signal'], 
                     mode='lines', 
                     name='Signal',
-                    line=dict(color='#0c53fb')
+                    line=dict(color='#296bc9')
                     ))
                 fig.update_layout(
                     xaxis_title="Tempo (s)",
@@ -74,7 +74,7 @@ def display_signal_and_features(df):
                             y=df_features[feature], 
                             mode='lines', 
                             name=feature,
-                            line=dict(color='#0c53fb')
+                            line=dict(color='#296bc9')
                         ))
                         fig.update_layout(
                             title=f"Feature Variation: {feature}",
