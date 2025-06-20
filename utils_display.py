@@ -16,10 +16,10 @@ def display_signal_and_features(df):
         st.dataframe(df_features, height=220, hide_index=True)
 
     with st.container():
-        col1, col2 = st.columns([3,4])
+        col1, col2 = st.columns([1,1])
 
         with col1:
-            with st.container(border=True, height=320):
+            with st.container(border=True, height=260):
                 fig = go.Figure()
                 fig.add_trace(go.Scatter(
                     x=df['t'], 
@@ -37,22 +37,22 @@ def display_signal_and_features(df):
                 st.plotly_chart(fig, use_container_width=True)
 
         with col2:
-            with st.container(border=True, height=320):
+            with st.container(border=True, height=260):
 
-                fig, axes = plt.subplots(1, 2, figsize=(6, 3))
+                fig, axes = plt.subplots(1, 2, figsize=(5, 2.5))
 
                 im1 = axes[0].imshow(applyGAF(df, 'summation'), cmap='hot', origin='lower')
-                axes[0].set_title('Gramian Angular Summation Field', fontsize=9, pad=10)
+                axes[0].set_title('Gramian Angular Summation Field', fontsize=7, pad=10)
                 cbar1 = fig.colorbar(im1, ax=axes[0], fraction=0.046, pad=0.04)
-                cbar1.ax.tick_params(labelsize=8)
+                cbar1.ax.tick_params(labelsize=6)
 
                 im2 = axes[1].imshow(applyGAF(df, 'difference'), cmap='hot', origin='lower')
-                axes[1].set_title('Gramian Angular Difference Field', fontsize=9, pad=10)
+                axes[1].set_title('Gramian Angular Difference Field', fontsize=7, pad=10)
                 cbar2 = fig.colorbar(im2, ax=axes[1], fraction=0.046, pad=0.04)
-                cbar2.ax.tick_params(labelsize=8)
+                cbar2.ax.tick_params(labelsize=6)
 
-                axes[0].tick_params(axis='both', labelsize=8)
-                axes[1].tick_params(axis='both', labelsize=8)
+                axes[0].tick_params(axis='both', labelsize=6)
+                axes[1].tick_params(axis='both', labelsize=6)
 
                 plt.tight_layout()
                 st.pyplot(fig, use_container_width=True)
@@ -65,8 +65,8 @@ def display_signal_and_features(df):
             features_to_plot = [col for col in df_features.columns if col not in ['Window', 'Mean_Time']]
 
             for idx, feature in enumerate(features_to_plot):
-                with st.container(border=True):
-                    col1, col2 = st.columns([3,4])
+                with st.container(border=False):
+                    col1, col2 = st.columns([1,1])
                     with col1:
                         fig = go.Figure()
                         fig.add_trace(go.Scatter(
@@ -86,7 +86,7 @@ def display_signal_and_features(df):
                         st.plotly_chart(fig, use_container_width=True)
 
                     with col2:
-                        fig, axes = plt.subplots(1, 2, figsize=(6, 3))
+                        fig, axes = plt.subplots(1, 2, figsize=(5, 2.5))
                         
                         df = pd.DataFrame({'signal': df_features[feature].values})
 
