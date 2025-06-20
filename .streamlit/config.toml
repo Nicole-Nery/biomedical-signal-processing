@@ -35,7 +35,7 @@ weight = 400
 
 [theme]
 base="light"
-baseFontSize = 11
+baseFontSize = 13
 primaryColor = "#0c53fb"
 backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f2f5fa"
