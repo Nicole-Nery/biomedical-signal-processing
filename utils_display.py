@@ -92,12 +92,12 @@ def display_signal_and_features(df):
                             df = pd.DataFrame({'signal': df_features[feature].values})
 
                             im1 = axes[0].imshow(applyGAF(df, 'summation'), cmap='hot', origin='lower')
-                            axes[0].set_title('Gramian Angular Summation Field', fontsize=9, pad=10)
+                            axes[0].set_title('Gramian Angular Summation Field', fontsize=7, pad=10)
                             cbar1 = fig.colorbar(im1, ax=axes[0], fraction=0.046, pad=0.04)
                             cbar1.ax.tick_params(labelsize=6)
 
                             im2 = axes[1].imshow(applyGAF(df, 'difference'), cmap='hot', origin='lower')
-                            axes[1].set_title('Gramian Angular Difference Field', fontsize=9, pad=10)
+                            axes[1].set_title('Gramian Angular Difference Field', fontsize=7, pad=10)
                             cbar2 = fig.colorbar(im2, ax=axes[1], fraction=0.046, pad=0.04)
                             cbar2.ax.tick_params(labelsize=6)
 
@@ -105,7 +105,7 @@ def display_signal_and_features(df):
                             axes[1].tick_params(axis='both', labelsize=6)
 
                             plt.tight_layout()
-                            st.pyplot(fig)
+                            st.pyplot(fig, use_container_width=True)
 
         with tabs[1]:
             st.markdown("""
