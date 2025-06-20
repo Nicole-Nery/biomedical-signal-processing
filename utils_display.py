@@ -55,7 +55,7 @@ def display_signal_and_features(df):
                 axes[1].tick_params(axis='both', labelsize=8)
 
                 plt.tight_layout()
-                st.pyplot(fig)
+                st.pyplot(fig, use_container_width=True)
 
     with st.container(border=True, height=320):
         st.markdown("#### Feature Trends Across Time Windows")
