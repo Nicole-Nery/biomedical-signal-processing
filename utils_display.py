@@ -66,7 +66,7 @@ def display_signal_and_features(df):
 
             for idx, feature in enumerate(features_to_plot):
                 with st.container(border=False):
-                    col1, col2 = st.columns([1,1])
+                    col1, col2 = st.columns([6,5])
                     with col1:
                         fig = go.Figure()
                         fig.add_trace(go.Scatter(
@@ -86,26 +86,25 @@ def display_signal_and_features(df):
                         st.plotly_chart(fig, use_container_width=True)
 
                     with col2:
-                        with st.container(border=True):
-                            fig, axes = plt.subplots(1, 2, figsize=(6, 4))
-                            
-                            df = pd.DataFrame({'signal': df_features[feature].values})
+                        fig, axes = plt.subplots(1, 2, figsize=(6, 4))
+                        
+                        df = pd.DataFrame({'signal': df_features[feature].values})
 
-                            im1 = axes[0].imshow(applyGAF(df, 'summation'), cmap='hot', origin='lower')
-                            axes[0].set_title('Gramian Angular Summation Field', fontsize=8, pad=10)
-                            cbar1 = fig.colorbar(im1, ax=axes[0], fraction=0.046, pad=0.04)
-                            cbar1.ax.tick_params(labelsize=7)
+                        im1 = axes[0].imshow(applyGAF(df, 'summation'), cmap='hot', origin='lower')
+                        axes[0].set_title('Gramian Angular Summation Field', fontsize=8, pad=10)
+                        cbar1 = fig.colorbar(im1, ax=axes[0], fraction=0.046, pad=0.04)
+                        cbar1.ax.tick_params(labelsize=7)
 
-                            im2 = axes[1].imshow(applyGAF(df, 'difference'), cmap='hot', origin='lower')
-                            axes[1].set_title('Gramian Angular Difference Field', fontsize=8, pad=10)
-                            cbar2 = fig.colorbar(im2, ax=axes[1], fraction=0.046, pad=0.04)
-                            cbar2.ax.tick_params(labelsize=7)
+                        im2 = axes[1].imshow(applyGAF(df, 'difference'), cmap='hot', origin='lower')
+                        axes[1].set_title('Gramian Angular Difference Field', fontsize=8, pad=10)
+                        cbar2 = fig.colorbar(im2, ax=axes[1], fraction=0.046, pad=0.04)
+                        cbar2.ax.tick_params(labelsize=7)
 
-                            axes[0].tick_params(axis='both', labelsize=7)
-                            axes[1].tick_params(axis='both', labelsize=7)
+                        axes[0].tick_params(axis='both', labelsize=7)
+                        axes[1].tick_params(axis='both', labelsize=7)
 
-                            plt.tight_layout()
-                            st.pyplot(fig, use_container_width=True)
+                        plt.tight_layout()
+                        st.pyplot(fig, use_container_width=True)
 
         with tabs[1]:
             st.markdown("""
