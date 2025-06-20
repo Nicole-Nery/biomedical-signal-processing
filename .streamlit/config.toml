@@ -42,7 +42,7 @@ secondaryBackgroundColor = "#f2f5fa"
 textColor = "#19233b"
 linkColor = "#0c53fb"
 showSidebarBorder = false
-borderColor = "#dddfe9"
+borderColor = "#bfcce9"
 showWidgetBorder = true
 baseRadius = "0.8rem"
 font = "SpaceGrotesk"
@@ -50,5 +50,5 @@ headingFont = "SpaceGroteskHeader"
 
 
 [theme.sidebar]
-backgroundColor = "#f1f5fb"
+backgroundColor = "#eff2fb"
 secondaryBackgroundColor = "#ffffff"
