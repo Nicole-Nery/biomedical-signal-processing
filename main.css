@@ -1,0 +1,21 @@
+footer {display: none}
+[data-testid="stHeader"] {display: none}
+
+
+.stMainBlockContainer {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+
+.stSidebar {
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+
+.stPlotlyChart {
+    padding-top: 0% !important;
+    margin-top: 0% !important;
+}
